@@ -28,33 +28,33 @@ struct Constants {
     }
     
     struct Color {
-        static let Black = UIColor.blackColor()
-        static let White = UIColor.whiteColor()
-        static let Clear = UIColor.clearColor()
-        static let AppTheme = UIColor(colorLiteralRed: 35/255, green: 77/255, blue: 109/255, alpha: 1.0)
-        static let AppThemeLowAlpha = UIColor(colorLiteralRed: 35/255, green: 77/255, blue: 109/255, alpha: 0.8)
-        static let CellHighlight = UIColor.darkGrayColor()
-        static let PrimaryButtonNormal = UIColor(colorLiteralRed: 59/255, green: 159/255, blue: 243/255, alpha: 1.0)
-        static let PrimaryButtonDisabled = UIColor(colorLiteralRed: 59/255, green: 159/255, blue: 243/255, alpha: 0.2)
-        static let SecondaryBarButtonNormal = UIColor.whiteColor()
-        static let SecondaryBarButtonDisabled = UIColor(colorLiteralRed: 255/255, green: 255/255, blue: 255/255, alpha: 0.2)
-        static let SecondaryButtonNormal = UIColor(colorLiteralRed: 206/255.0, green: 213/255.0, blue: 219/255.0, alpha: 1.0)
-        static let titleTextColor = UIColor.whiteColor()
-        static let Error = UIColor(colorLiteralRed: 239/255, green: 72/255, blue: 54/255, alpha: 1.0)
-        static let Success = UIColor(colorLiteralRed: 106/255, green: 192/255, blue: 57/255, alpha: 1.0)
-        static let BackgroundOverlay = UIColor(colorLiteralRed: 0/255, green: 0/255, blue: 0/255, alpha: 0.7)
-        static let ProductScanOnlyOverlay = UIColor(colorLiteralRed:215/255, green:228/255, blue:236/255, alpha:0.92)
-        static let TableSection = UIColor(colorLiteralRed: 220/255, green: 238/255, blue: 242/255, alpha: 1.0)
-        static let Hold = UIColor(colorLiteralRed: 255/255, green: 210/255, blue: 0/255, alpha: 1.0)
-        static let BaseBackground = UIColor(colorLiteralRed:215/255, green:228/255, blue:236/255, alpha:1.0)
-        static let Border = UIColor(colorLiteralRed:122/255, green:156/255, blue:181/255, alpha:1.0)
-        static let MasterBaseBackground = UIColor(colorLiteralRed:240/255, green:245/255, blue:248/255, alpha:1.0)
-        static let OffCanvas = UIColor(colorLiteralRed:28/255, green:45/255, blue:58/255, alpha:1.0)
-        static let CartTopBackground = UIColor(colorLiteralRed:122/255, green:156/255, blue:181/255, alpha:1.0)
-        static let WhiteTableCellSeparator = UIColor(colorLiteralRed:215/255, green:228/255, blue:236/255, alpha:1.0)
-        static let DetailText = UIColor(colorLiteralRed: 115/255.0, green: 115/255.0, blue: 115/255.0, alpha: 1.0)
-        static let LogoutButton = UIColor(colorLiteralRed: 18/255.0, green: 30/255.0, blue: 38/255.0, alpha: 1.0)
-        static let cashDrawer = UIColor(colorLiteralRed:59/255.0, green:159/255.0, blue:243/255.0, alpha: 1.0)
+        static let Black = UIColor.black
+        static let White = UIColor.white
+        static let Clear = UIColor.clear
+        static let AppTheme = UIColor(red: 35/255, green: 77/255, blue: 109/255, alpha: 1.0)
+        static let AppThemeLowAlpha = UIColor(red: 35/255, green: 77/255, blue: 109/255, alpha: 0.8)
+        static let CellHighlight = UIColor.darkGray
+        static let PrimaryButtonNormal = UIColor(red: 59/255, green: 159/255, blue: 243/255, alpha: 1.0)
+        static let PrimaryButtonDisabled = UIColor(red: 59/255, green: 159/255, blue: 243/255, alpha: 0.2)
+        static let SecondaryBarButtonNormal = UIColor.white
+        static let SecondaryBarButtonDisabled = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.2)
+        static let SecondaryButtonNormal = UIColor(red: 206/255.0, green: 213/255.0, blue: 219/255.0, alpha: 1.0)
+        static let titleTextColor = UIColor.white
+        static let Error = UIColor(red: 239/255, green: 72/255, blue: 54/255, alpha: 1.0)
+        static let Success = UIColor(red: 106/255, green: 192/255, blue: 57/255, alpha: 1.0)
+        static let BackgroundOverlay = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.7)
+        static let ProductScanOnlyOverlay = UIColor(red:215/255, green:228/255, blue:236/255, alpha:0.92)
+        static let TableSection = UIColor(red: 220/255, green: 238/255, blue: 242/255, alpha: 1.0)
+        static let Hold = UIColor(red: 255/255, green: 210/255, blue: 0/255, alpha: 1.0)
+        static let BaseBackground = UIColor(red:215/255, green:228/255, blue:236/255, alpha:1.0)
+        static let Border = UIColor(red:122/255, green:156/255, blue:181/255, alpha:1.0)
+        static let MasterBaseBackground = UIColor(red:240/255, green:245/255, blue:248/255, alpha:1.0)
+        static let OffCanvas = UIColor(red:28/255, green:45/255, blue:58/255, alpha:1.0)
+        static let CartTopBackground = UIColor(red:122/255, green:156/255, blue:181/255, alpha:1.0)
+        static let WhiteTableCellSeparator = UIColor(red:215/255, green:228/255, blue:236/255, alpha:1.0)
+        static let DetailText = UIColor(red: 115/255.0, green: 115/255.0, blue: 115/255.0, alpha: 1.0)
+        static let LogoutButton = UIColor(red: 18/255.0, green: 30/255.0, blue: 38/255.0, alpha: 1.0)
+        static let cashDrawer = UIColor(red:59/255.0, green:159/255.0, blue:243/255.0, alpha: 1.0)
     }
     
     struct String {
@@ -130,10 +130,10 @@ struct Constants {
     
     struct Number {
         static let RequestTimeoutInterval: Int32 = 30
-        static let AnimateTiming: NSTimeInterval = 0.1
+        static let AnimateTiming: TimeInterval = 0.1
         static let FetchBatchSize: Int = 250
         static let FetchLimit: Int = 250
-        static let DebounceTiming: NSTimeInterval = 0.3
+        static let DebounceTiming: TimeInterval = 0.3
         static let CustomerNotSavedId = -1
         static let CustomerSavedId = 0
         static let PostBatchSize: Int = 250
@@ -189,15 +189,15 @@ struct Constants {
         static let Inactive = "Inactive"
     }
     
-    static let ColorArray: [UIColor] = [UIColor(colorLiteralRed: 68/255, green: 108/255, blue: 179/255, alpha: 1.0),
-        UIColor(colorLiteralRed: 220/255, green: 198/255, blue: 224/255, alpha: 1.0),
-        UIColor(colorLiteralRed: 148/255, green: 171/255, blue: 255/255, alpha: 1.0),
-        UIColor(colorLiteralRed: 129/255, green: 207/255, blue: 224/255, alpha: 1.0),
-        UIColor(colorLiteralRed: 3/255, green: 201/255, blue: 169/255, alpha: 1.0),
-        UIColor(colorLiteralRed: 233/255, green: 212/255, blue: 96/255, alpha: 1.0),
-        UIColor(colorLiteralRed: 108/255, green: 122/255, blue: 137/255, alpha: 1.0),
-        UIColor(colorLiteralRed: 129/255, green: 10/255, blue: 91/255, alpha: 1.0),
-        UIColor(colorLiteralRed: 241/255, green: 169/255, blue: 160/255, alpha: 1.0),
-        UIColor(colorLiteralRed: 144/255, green: 198/255, blue: 149/255, alpha: 1.0)
+    static let ColorArray: [UIColor] = [UIColor(red: 68/255, green: 108/255, blue: 179/255, alpha: 1.0),
+        UIColor(red: 220/255, green: 198/255, blue: 224/255, alpha: 1.0),
+        UIColor(red: 148/255, green: 171/255, blue: 255/255, alpha: 1.0),
+        UIColor(red: 129/255, green: 207/255, blue: 224/255, alpha: 1.0),
+        UIColor(red: 3/255, green: 201/255, blue: 169/255, alpha: 1.0),
+        UIColor(red: 233/255, green: 212/255, blue: 96/255, alpha: 1.0),
+        UIColor(red: 108/255, green: 122/255, blue: 137/255, alpha: 1.0),
+        UIColor(red: 129/255, green: 10/255, blue: 91/255, alpha: 1.0),
+        UIColor(red: 241/255, green: 169/255, blue: 160/255, alpha: 1.0),
+        UIColor(red: 144/255, green: 198/255, blue: 149/255, alpha: 1.0)
     ]
 }

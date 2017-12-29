@@ -20,13 +20,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MatchColors/GamePageViewController.swift"
-            timestampString = "513092602.351376"
+            timestampString = "536257670.31876"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
             endingLineNumber = "35"
             landmarkName = "changeColor()"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -36,13 +36,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MatchColors/GamePageViewController.swift"
-            timestampString = "513092602.351376"
+            timestampString = "536257670.318888"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
             endingLineNumber = "36"
             landmarkName = "changeColor()"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -9,16 +9,16 @@
 import UIKit
 
 let NoOfGlasses = 30
-let π:CGFloat = CGFloat(M_PI)
+let π:CGFloat = CGFloat(Double.pi)
 
 @IBDesignable
 class TimerUIView: UIView {
     
     @IBInspectable var counter: Int = 5
-    @IBInspectable var outlineColor: UIColor = UIColor.blueColor()
-    @IBInspectable var counterColor: UIColor = UIColor.orangeColor()
+    @IBInspectable var outlineColor: UIColor = UIColor.blue
+    @IBInspectable var counterColor: UIColor = UIColor.orange
     
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         let center = CGPoint(x:bounds.width/2, y: bounds.height/2)
         let radius: CGFloat = max(bounds.width, bounds.height)
         let arcWidth: CGFloat = 4
