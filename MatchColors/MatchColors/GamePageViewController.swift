@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GamePageViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class GamePageViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var timer: TimerUIView!
     @IBOutlet weak var scoreCard: UILabel!
@@ -28,7 +28,16 @@ class GamePageViewController: UIViewController, UICollectionViewDataSource, UICo
         scoreCard.text = "0"
         colorChoice.backgroundColor = colorArray[choosenIndex]
         colorChoice.text = "TOUCH THIS COLOR"
-        nSTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(changeColor), userInfo: nil, repeats: true)
+        nSTimer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(changeColor), userInfo: nil, repeats: true)
+        collectionView.delegate = self;
+        collectionView.dataSource = self;
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        let width = UIScreen.main.bounds.width
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+        layout.itemSize = CGSize(width: width / 2, height: width / 2)
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        collectionView!.collectionViewLayout = layout
     }
     
     @objc fileprivate func changeColor() {
@@ -43,6 +52,7 @@ class GamePageViewController: UIViewController, UICollectionViewDataSource, UICo
             self.present(alert, animated: true, completion: nil)
         } else {
             colorIndex =  Int(arc4random_uniform(UInt32(14)))
+            colorChoice.backgroundColor = colorArray[choosenIndex]
             collectionView.reloadData()
             time -= 1;
             redrawTimer()
@@ -65,37 +75,39 @@ class GamePageViewController: UIViewController, UICollectionViewDataSource, UICo
            colorIndex = 0
         }
         cell.backgroundColor = colorArray[colorIndex]
-        colorIndex += 1;
         cell.tag = colorIndex
+        cell.layer.cornerRadius = cell.frame.size.width/2
+        colorIndex += 1;
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         collectionView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        let screenSize = UIScreen.main.bounds
-        let screenWidth = screenSize.width + 55
-        let cellSquareSize: CGFloat = screenWidth / 4.0
+        let screenWidth = collectionView.frame.size.width - 100
+//        let screenHeight = screenSize.width + 55
+//        let heightSquare = screenHeight / 4.0
+        let cellSquareSize: CGFloat = screenWidth / 3.0
         return CGSize(width: cellSquareSize, height: cellSquareSize);
         
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 1;
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 1;
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 100, left: 10, bottom: 10, right: 10)
+        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath)
         if (cell!.tag != choosenIndex) {
-            time -= 5
-            changeColor()
+            //time -= 5
+            //changeColor()
         } else {
             score += 1;
         }
