@@ -19,15 +19,32 @@ class GamePageViewController: UIViewController, UICollectionViewDataSource, UICo
     var score: Int = 0
     var choosenIndex: Int = 1
     var time: Int = 30
+    var tbutton: UIButton = {
+        let button = UIButton(type: .system)
+        let image = UIImage(named: "accessibility")
+        button.setBackgroundImage(image, for: .normal)
+        button.addTarget(self, action: #selector(dothings), for: .touchUpInside)
+        return button
+    }()
+
+    @objc func dothings(){
+        let frame = self.tbutton.frame
+        UIView.animate(withDuration: 0.1, animations: {
+            self.tbutton.frame = CGRect.init(x: (self.tbutton.frame.origin.x)-(self.tbutton.frame.size.width)/2, y: (self.tbutton.frame.origin.y)-(self.tbutton.frame.size.width)/2, width: (self.tbutton.frame.width)*2, height: (self.tbutton.frame.size.width)*2)
+        }, completion: { (true) in
+            self.tbutton.frame = frame
+        })
+    }
+
     var colorArray: [ UIColor ] = {
-        return [UIColor.red,UIColor.yellow,UIColor.magenta,UIColor.green,UIColor.cyan,UIColor.blue,UIColor.black,UIColor.gray,UIColor.darkGray,UIColor.lightGray,UIColor.white,UIColor.orange,UIColor.brown,UIColor.purple,UIColor(red:28/255, green:45/255, blue:58/255, alpha:1.0) ]
+        return [UIColor.red,UIColor.yellow,UIColor.magenta,UIColor.green,UIColor.cyan,UIColor.blue,UIColor.magenta ,UIColor.gray,UIColor.darkGray,UIColor.lightGray,UIColor.white,UIColor.orange,UIColor.brown,UIColor.purple,UIColor(red:28/255, green:45/255, blue:58/255, alpha:1.0) ]
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         scoreCard.text = "0"
-        colorChoice.backgroundColor = colorArray[choosenIndex]
-        colorChoice.text = "TOUCH THIS COLOR"
+        //colorChoice.backgroundColor = colorArray[choosenIndex]
+        colorChoice.text = "HIT HIM"
         nSTimer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(changeColor), userInfo: nil, repeats: true)
         collectionView.delegate = self;
         collectionView.dataSource = self;
@@ -52,7 +69,6 @@ class GamePageViewController: UIViewController, UICollectionViewDataSource, UICo
             self.present(alert, animated: true, completion: nil)
         } else {
             colorIndex =  Int(arc4random_uniform(UInt32(14)))
-            colorChoice.backgroundColor = colorArray[choosenIndex]
             collectionView.reloadData()
             time -= 1;
             redrawTimer()
@@ -77,6 +93,11 @@ class GamePageViewController: UIViewController, UICollectionViewDataSource, UICo
         cell.backgroundColor = colorArray[colorIndex]
         cell.tag = colorIndex
         cell.layer.cornerRadius = cell.frame.size.width/2
+        if colorIndex == choosenIndex {
+            tbutton.frame = CGRect(x: (cell.frame.size.width-23)/2, y: (cell.frame.size.width-32)/2, width: 23, height: 32)
+            tbutton.removeFromSuperview()
+            cell.addSubview(tbutton)
+        }
         colorIndex += 1;
         return cell
     }
@@ -110,6 +131,12 @@ class GamePageViewController: UIViewController, UICollectionViewDataSource, UICo
             //changeColor()
         } else {
             score += 1;
+            let frame = self.tbutton.frame
+            UIView.animate(withDuration: 0.1, animations: {
+                self.tbutton.frame = CGRect.init(x: (self.tbutton.frame.origin.x)-(self.tbutton.frame.size.width)/2, y: (self.tbutton.frame.origin.y)-(self.tbutton.frame.size.width)/2, width: (self.tbutton.frame.width)*2, height: (self.tbutton.frame.size.width)*2)
+            }, completion: { (true) in
+                self.tbutton.frame = frame
+            })
         }
     }
     

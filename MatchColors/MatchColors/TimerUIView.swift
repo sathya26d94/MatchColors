@@ -15,8 +15,8 @@ let π:CGFloat = CGFloat(Double.pi)
 class TimerUIView: UIView {
     
     @IBInspectable var counter: Int = 5
-    @IBInspectable var outlineColor: UIColor = UIColor.blue
-    @IBInspectable var counterColor: UIColor = UIColor.orange
+    @IBInspectable var outlineColor: UIColor = UIColor.white
+    @IBInspectable var counterColor: UIColor = UIColor.black
     
     override func draw(_ rect: CGRect) {
         let center = CGPoint(x:bounds.width/2, y: bounds.height/2)
